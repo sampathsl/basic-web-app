@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
 
-    <display-name>TeatApp</display-name>
+    <display-name>Angular + Spring MVC Web App</display-name>
+    <description>Spring MVC web application</description>
 
     <servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>
             org.springframework.web.servlet.DispatcherServlet
         </servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
+        </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
@@ -18,7 +23,7 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
+        <param-value>/WEB-INF/applicationContext.xml</param-value>
     </context-param>
 
     <listener>
@@ -26,4 +31,5 @@
             org.springframework.web.context.ContextLoaderListener
         </listener-class>
     </listener>
+
 </web-app>
